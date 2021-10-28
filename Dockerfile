@@ -68,9 +68,9 @@ RUN cat /etc/profile.d/java.sh >> /etc/environment
 
 RUN echo "export PDSH_RCMD_TYPE=ssh" > /etc/profile.d/pdsh.sh
 
-WORKDIR /
-COPY scripts/hadoop-startup.sh /
-RUN chmod +x hadoop-startup.sh
+WORKDIR /opt
+COPY scripts/hadoop-startup.sh ${HADOOP_HOME}/bin/
+RUN chmod +x ${HADOOP_HOME}/bin/hadoop-startup.sh
 
-#ENTRYPOINT [ "/hadoop-startup.sh" ]
-ENTRYPOINT [ "/bin/bash" ]
+ENTRYPOINT [ "${HADOOP_HOME}/bin/hadoop-startup.sh" ]
+#ENTRYPOINT [ "/bin/bash" ]
