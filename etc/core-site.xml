@@ -31,4 +31,24 @@
         <name>fs.trash.interval</name>
         <value>1440</value>
     </property>
+
+  <property>
+    <name>hadoop.proxyuser.hive.hosts</name>
+    <value>*</value>
+  </property>
+  <property>
+    <name>hadoop.proxyuser.hive.groups</name>
+    <value>*</value>
+  </property>
+
+<property>
+	<name>hadoop.proxyuser.root.hosts</name> 
+	<value>*</value> 
+</property> 
+
+<property> 
+	<name>hadoop.proxyuser.root.groups</name> 
+	<value>*</value> 
+</property>
+
 </configuration>
